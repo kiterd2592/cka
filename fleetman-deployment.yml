@@ -1,12 +1,12 @@
 apiVersion: apps/v1
-kind: ReplicaSet
+kind: Deployment
 metadata:
   name: fleetman
 spec:
   selector:
     matchLabels:
       app: fleetman
-  replicas: 10
+  replicas: 3
   template:
     metadata:
       labels:
