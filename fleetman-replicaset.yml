@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: fleetman
+spec:
+  selector:
+    matchLabels:
+      app: fleetman
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: fleetman
+    spec:
+      containers:
+      - name: fleetman
+        image: richardchesterwood/k8s-fleetman-queue:release1
+        ports:
+        - containerPort: 8161
