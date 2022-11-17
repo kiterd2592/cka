@@ -1,0 +1,5 @@
+Very usefule solutions when get stuck
+
+when a pod is stuck in terminating state run the below command to force delete it.
+
+for p in $(kubectl get pods | grep Terminating | awk '{print $1}'); do kubectl delete pod $p --grace-period=0 --force;done
